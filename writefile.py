@@ -23,7 +23,7 @@ def find_connection(url,count):
 	ctx.check_hostname = False
 	ctx.verify_mode = ssl.CERT_NONE
 	print ("Hitting all the extracted urls:",url,count)
-	conn = requests.get(url)
+	conn = requests.get(url,verify=False)
 	print ("Final Code",conn.status_code)
 	if conn.status_code ==404:
 		style = xlwt.easyxf('font: color red ')
