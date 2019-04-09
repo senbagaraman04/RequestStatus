@@ -4,6 +4,9 @@ import ssl
 import os, ssl
 import xlwt
 import requests
+#To Supress the SSL Warning 
+requests.packages.urllib3.disable_warnings()
+
 
 	
 
