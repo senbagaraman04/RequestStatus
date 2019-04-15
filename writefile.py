@@ -4,9 +4,10 @@ import ssl
 import os, ssl
 import xlwt
 import requests
+#import main.py as m
 #To Supress the SSL Warning 
 requests.packages.urllib3.disable_warnings()
-
+excelFileName = 'output.xls'
 
 	
 
@@ -32,12 +33,16 @@ def find_connection(url,count):
 		style = xlwt.easyxf('font: color red ')
 		sheet.write(count,1,url,style)
 		sheet.write(count,0,conn.status_code,style)
-	else:
+	elif conn.status_code == 200:
 		style = xlwt.easyxf('font: bold 1') 
 		sheet.write(count,1,url,style)
 		sheet.write(count,0, conn.status_code, style)
+	else:#Mostly the remaining status code will be 500, so the corresponding urls will be in blue color
+		style = xlwt.easyxf('font: color blue ')
+		sheet.write(count,1,url,style)
+		sheet.write(count,0,conn.status_code,style)
 # Specifying column 
-	workbook.save("url.xls") 
+	workbook.save(excelFileName) 
 
 	
 	
@@ -49,4 +54,4 @@ sheet = workbook.add_sheet("Sheet Name")
 style = xlwt.easyxf('font: bold 1') 
 
 # Specifying column 
-workbook.save("url.xls") 
+workbook.save(excelFileName) 

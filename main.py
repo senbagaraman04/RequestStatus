@@ -1,9 +1,18 @@
-#test to extract the url
+'''
+Program Name: Request Status.
 
+Author: Senbagaraman M.
+
+Problem: Sitemap.xml may contains url, which might be pointing to some error pages. Find the urls which is not valid.
+
+'''
 import xml.etree.ElementTree as ET
 import writefile as c
 
-tree = ET.parse('sitemap.xml')  
+
+xmlFileName = 'sitemap.xml'
+
+tree = ET.parse(xmlFileName)  
 print ("Process Started")
 #print (tree)
 
@@ -22,4 +31,4 @@ for item in tree.findall('url'):
 
 	
 print ("********************")	
-print ("All loc Indexed, Please find the file named sample.xls")
+print ("All loc Indexed in "+xmlFileName+",Please find the file named",c.excelFileName)
