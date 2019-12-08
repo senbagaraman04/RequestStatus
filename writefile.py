@@ -51,7 +51,7 @@ workbook = xlwt.Workbook()
 sheet = workbook.add_sheet("Sheet Name") 
 
 # Specifying style 
-style = xlwt.easyxf('font: bold 1') 
+STYLE = xlwt.easyxf('font: bold 1') 
 
 # Specifying column 
 workbook.save(excelFileName) 
