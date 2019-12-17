@@ -11,3 +11,4 @@ python main.py
 
 Sitemap.xml -- The files which contains the sitemap data
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/senbagaraman04/RequestStatus.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/senbagaraman04/RequestStatus/alerts/)
