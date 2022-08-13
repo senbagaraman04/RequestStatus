@@ -1,3 +1,14 @@
+'''
+Program Name: Request Status.
+
+Author: Senbagaraman M.
+
+GitHubLink : https://github.com/senbagaraman04/RequestStatus
+
+Problem: Sitemap.xml may contains url, which might be pointing to some error pages. Find the urls which is not valid.
+
+'''
+
 #for 404 testing and writing the data into excel file
 import urllib.request
 import ssl
@@ -24,6 +35,7 @@ ctx.verify_mode = ssl.CERT_NONE
 
 def find_connection(url,count):
 	ctx = ssl.create_default_context()
+	print(url);
 	ctx.check_hostname = False
 	ctx.verify_mode = ssl.CERT_NONE
 	print ("Hitting all the extracted urls:",url,count)
